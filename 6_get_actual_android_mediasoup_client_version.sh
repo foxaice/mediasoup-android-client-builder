@@ -15,6 +15,8 @@ echo "Checkout $VERSION_BRANCH in Mediasoup-client-android"
 VERSION_BRANCH="version/$MEDIASOUP_ANDROID_CLIENT_VERSION_NAME"
 CURRENT_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
 
+git fetch
+
 if [[ "$CURRENT_BRANCH" == "$VERSION_BRANCH" ]]
 then
     echo "$VERSION_BRANCH Branch already exists"

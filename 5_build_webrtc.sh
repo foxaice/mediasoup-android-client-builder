@@ -7,16 +7,16 @@ cd ./webrtc_android/src
 source build/android/envsetup.sh
 
 echo "Gn gen for x64"
-gn gen out/x86_64 --args='is_debug=false is_component_build=false is_clang=true rtc_include_tests=false rtc_use_h264=true use_rtti=true use_custom_libcxx=false target_os="android" target_cpu="x64"'
+gn gen out/x86_64 --args='is_clang=true is_component_build=false is_debug=false rtc_build_examples=false rtc_build_tools=false rtc_enable_protobuf=false rtc_include_tests=false use_custom_libcxx=false target_os="android" target_cpu="x64"'
 
 echo "Gn gen for x86"
-gn gen out/x86 --args='is_debug=false is_component_build=false is_clang=true rtc_include_tests=false rtc_use_h264=true use_rtti=true use_custom_libcxx=false target_os="android" target_cpu="x86"'
+gn gen out/x86 --args='is_clang=true is_component_build=false is_debug=false rtc_build_examples=false rtc_build_tools=false rtc_enable_protobuf=false rtc_include_tests=false use_custom_libcxx=false target_os="android" target_cpu="x86"'
 
 echo "Gn gen for arm"
-gn gen out/armeabi-v7a --args='is_debug=false is_component_build=false is_clang=true rtc_include_tests=false rtc_use_h264=true use_rtti=true use_custom_libcxx=false target_os="android" target_cpu="arm"'
+gn gen out/armeabi-v7a --args='is_clang=true is_component_build=false is_debug=false rtc_build_examples=false rtc_build_tools=false rtc_enable_protobuf=false rtc_include_tests=false use_custom_libcxx=false target_os="android" target_cpu="arm"'
 
 echo "Gn gen for arm64"
-gn gen out/arm64-v8a --args='is_debug=false is_component_build=false is_clang=true rtc_include_tests=false rtc_use_h264=true use_rtti=true use_custom_libcxx=false target_os="android" target_cpu="arm64"'
+gn gen out/arm64-v8a --args='is_clang=true is_component_build=false is_debug=false rtc_build_examples=false rtc_build_tools=false rtc_enable_protobuf=false rtc_include_tests=false use_custom_libcxx=false target_os="android" target_cpu="arm64"'
 
 echo "Build arm64"
 ninja -C ./out/arm64-v8a/
@@ -31,7 +31,7 @@ echo "Build arm86"
 ninja -C ./out/armeabi-v7a/
 
 echo "Build aar"
-./tools_webrtc/android/build_aar.py --extra-gn-args 'is_debug=false is_component_build=false is_clang=true rtc_include_tests=false rtc_use_h264=true use_rtti=true use_custom_libcxx=false'
+./tools_webrtc/android/build_aar.py --extra-gn-args 'is_clang=true is_component_build=false is_debug=false rtc_build_examples=false rtc_build_tools=false rtc_enable_protobuf=false rtc_include_tests=false use_custom_libcxx=false'
 
 mkdir -p ../build_output
 cd ../build_output
