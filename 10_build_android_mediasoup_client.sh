@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cd mediasoup-client-android	
 bash ./gradlew cleanBuildCache && ./gradlew clean
 bash ./gradlew assemble

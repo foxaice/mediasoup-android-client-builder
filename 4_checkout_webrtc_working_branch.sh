@@ -8,9 +8,9 @@ if [[ "$CURRENT_BRANCH" != "remotes/$WORKING_BRANCH" ]]
 then
 	git checkout $WORKING_BRANCH --force
 	echo "Branch switched to $WORKING_BRANCH"
+
+	echo "Syncing with GClient"
+	gclient sync -D --force
 else
 	echo "Already at $WORKING_BRANCH Branch"
 fi
-
-echo "Syncing with GClient"
-gclient sync -D
