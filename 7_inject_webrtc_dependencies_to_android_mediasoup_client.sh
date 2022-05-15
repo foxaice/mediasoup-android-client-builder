@@ -8,8 +8,6 @@ cp -rTv webrtc_android/build_output/arm64-v8a/ mediasoup-client-android/mediasou
 
 cp -rTv webrtc_android/build_output/armeabi-v7a/ mediasoup-client-android/mediasoup-client/deps/webrtc/lib/armeabi-v7a
 
-cp -rTv webrtc_android/build_output/x86/ mediasoup-client-android/mediasoup-client/deps/webrtc/lib/x86
-
 cp -rTv webrtc_android/build_output/x86_64/ mediasoup-client-android/mediasoup-client/deps/webrtc/lib/x86_64
 
 echo "removing old WebRTC sources"
