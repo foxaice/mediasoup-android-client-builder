@@ -1,14 +1,15 @@
 #!/bin/bash
 
+ARCH_TYPES=("$@")
+
 WEBRTC_OUTPUT_DIR=$SCRIPT_DIR/webrtc_android/build_output
 WEBRTC_DEPS_DIR=$SCRIPT_DIR/mediasoup-client-android/mediasoup-client/deps/webrtc
-
 
 cd $SCRIPT_DIR
 
 cp -v $WEBRTC_OUTPUT_DIR/libwebrtc.aar $WEBRTC_DEPS_DIR/lib
 
-for arch_type in $ARCH_TYPES
+for arch_type in "${ARCH_TYPES[@]}"
 do
  cp -rTv $WEBRTC_OUTPUT_DIR/$arch_type/ $WEBRTC_DEPS_DIR/lib/$arch_type
 done

@@ -13,4 +13,7 @@ then
 	gclient sync -D --force
 else
 	echo "Already at $WORKING_BRANCH Branch"
+
+	echo "Syncing with GClient"
+	gclient sync -D
 fi
