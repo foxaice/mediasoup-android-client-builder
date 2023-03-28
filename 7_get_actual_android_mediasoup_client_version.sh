@@ -21,6 +21,5 @@ if [[ "$CURRENT_BRANCH" == "$VERSION_BRANCH" ]]
 then
     echo "$VERSION_BRANCH Branch already exists"
 else
-    git checkout -B version/$MEDIASOUP_ANDROID_CLIENT_VERSION_NAME -f $MEDIASOUP_ANDROID_CLIENT_VERSION_NAME
+    git checkout -fB $VERSION_BRANCH origin/$VERSION_BRANCH
 fi
-
