@@ -11,6 +11,9 @@ then
 
 	echo "Syncing with GClient"
 	gclient sync -D --force
+	#todo to fix this line below
+	#should run the same command again, because an error occurs after the first run
+	gclient sync -D --force
 else
 	echo "Already at $WORKING_BRANCH Branch"
 
