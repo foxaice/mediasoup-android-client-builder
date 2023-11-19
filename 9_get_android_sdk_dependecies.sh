@@ -12,6 +12,8 @@ else
     mv ./cmdline-tools android-sdk/cmdline-tools/tools
 fi
 
+export ANDROID_HOME=$SCRIPT_DIR/android-sdk
+
 sdkmanager --update
 yes | sdkmanager --licenses
 sdkmanager "ndk;$ANDROID_NDK_VERSION"
