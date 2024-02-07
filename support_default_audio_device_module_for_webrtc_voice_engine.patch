@@ -1,0 +1,17 @@
+diff --git a/modules/audio_device/audio_device_impl.cc b/modules/audio_device/audio_device_impl.cc
+index 80ed928933..39408b6b6d 100644
+--- a/modules/audio_device/audio_device_impl.cc
++++ b/modules/audio_device/audio_device_impl.cc
+@@ -65,7 +65,11 @@ rtc::scoped_refptr<AudioDeviceModule> AudioDeviceModule::Create(
+     AudioLayer audio_layer,
+     TaskQueueFactory* task_queue_factory) {
+   RTC_DLOG(LS_INFO) << __FUNCTION__;
+-  return AudioDeviceModule::CreateForTest(audio_layer, task_queue_factory);
++  #if defined(WEBRTC_ANDROID)
++    return CreateAndroidAudioDeviceModule(audio_layer);
++  #else
++    return AudioDeviceModule::CreateForTest(audio_layer, task_queue_factory);
++  #endif
+ }
+ 
+ // static
