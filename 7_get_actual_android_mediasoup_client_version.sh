@@ -4,6 +4,10 @@ if [[ -d ./mediasoup-client-android ]]
 then
     echo "Mediasoup-client-android exists"
 else
+    # Increase the Git buffer size to the largest individual file size of repo
+    # https://confluence.atlassian.com/bitbucketserverkb/git-push-fails-fatal-the-remote-end-hung-up-unexpectedly-779171796.html
+    git config --global http.postBuffer 157286400
+    
     echo "Mediasoup-client-android downloading"
     git clone https://github.com/foxaice/mediasoup-client-android.git
 fi
