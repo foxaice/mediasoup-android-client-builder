@@ -24,8 +24,6 @@ ARCH_TYPES=("$@")
 
 cd $SCRIPT_DIR/webrtc_android/src
 
-#./build/install-build-deps.sh
-#./build/install-build-deps-android.sh
 ./build/install-build-deps.sh --android
 source build/android/envsetup.sh
 
