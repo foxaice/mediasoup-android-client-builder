@@ -18,14 +18,17 @@ function get_target_cpu() {
  echo "$target_cpu"
 }
 
+# When building webrtc 6099 with is_debug=true, there was an error when turning off the camera:
+# "mediasoup-android-client-builder/webrtc_android/src/pc/rtp_sender.cc", 799, "(signaling_thread_)->IsCurrent()" was observed.
+# Printing out the thread name, it matched signaling_thread_, error is in the RTC_DCHECK_RUN_ON check itself.
+# See related issue: https://groups.google.com/g/discuss-webrtc/c/pm56BSiAa-E
 COMMON_ARGS='ffmpeg_branding="Chrome" rtc_use_h264=true is_clang=true is_component_build=false is_debug=false rtc_build_examples=false rtc_build_tools=false rtc_enable_protobuf=false rtc_include_tests=false use_custom_libcxx=false target_os="android"'
 
 ARCH_TYPES=("$@")
 
 cd $SCRIPT_DIR/webrtc_android/src
 
-./build/install-build-deps.sh
-./build/install-build-deps-android.sh
+./build/install-build-deps.sh --android
 source build/android/envsetup.sh
 
 

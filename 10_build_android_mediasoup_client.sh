@@ -1,8 +1,10 @@
 #!/bin/bash
 
 cd mediasoup-client-android	
-bash ./gradlew cleanBuildCache && ./gradlew clean
-bash ./gradlew assemble
+rm -rf ./gradle/caches
+
+bash ./gradlew clean
+bash ./gradlew assemble 
 
 cd $SCRIPT_DIR
 rm -rfv ./output
