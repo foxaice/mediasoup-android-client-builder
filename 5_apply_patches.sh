@@ -5,9 +5,9 @@
 # "git apply abc.patch || git apply abc.patch -R --check && echo already applied"
 # But this behavior allows you to see real errors during the first patch.
 
-echo "Apply webrtc h264 support patch"
+echo "Apply webrtc h264 codec support patch"
 cd $SCRIPT_DIR/webrtc_android/src/third_party/ffmpeg
-git apply $SCRIPT_DIR/webrtc_h264_support.patch
+git apply $SCRIPT_DIR/webrtc_h264_codec_support.patch
 
 
 # Who use "use_custom_libcxx=false" argument build for android
